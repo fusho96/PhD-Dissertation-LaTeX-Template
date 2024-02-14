@@ -1,0 +1,54 @@
+%!TEX TS-program = xelatex 
+%!TEX encoding = UTF-8 Unicode
+
+% Modify the following line to match your school
+% Available options include `Harvard`, `Princeton`, and `NYU`.
+
+\documentclass[School=Harvard]{Dissertate}
+\usepackage{xurl}
+\usepackage{rotating}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\begin{document}
+
+% the front matter
+\input{frontmatter/personalize}
+\maketitle
+%\copyrightpage
+%\dedicationpage
+\abstractpage
+\declaration
+\blankpage
+\acknowledgments
+
+\tableofcontents
+\listoffigures
+\listoftables
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\doublespacing
+
+% include each chapter...
+\setcounter{chapter}{0}  % start chapter numbering at 0
+\include{chapters/introduction}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/conclusion}
+%\blankpage
+\begin{appendices}
+    \include{chapters/appendixA}
+\end{appendices}
+
+\singlespacing
+
+% the back matter
+\clearpage
+\bibliography{references}
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{apacite} % author-year
+%\bibliographystyle{unsrtnat} % number
+%\include{endmatter/colophon}
+\end{document}
